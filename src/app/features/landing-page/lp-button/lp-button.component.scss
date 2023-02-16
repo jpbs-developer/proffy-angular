@@ -1,0 +1,6 @@
+button {
+  @apply flex items-center justify-center font-bold text-sm w-full gap-2 rounded-lg bg-purple-200 p-4 lg:p-9 lg:text-lg text-white;
+  img {
+    @apply w-7;
+  }
+}

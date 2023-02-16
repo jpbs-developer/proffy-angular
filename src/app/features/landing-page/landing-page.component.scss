@@ -1,0 +1,8 @@
+main {
+  @apply h-screen md:h-screen w-screen bg-primary grid place-items-center p-5;
+}
+
+.logo,
+.logo-title {
+  @apply w-full md:w-4/5 lg:w-full;
+}
