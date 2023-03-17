@@ -11,4 +11,5 @@ import { CommonModule } from '@angular/common';
 export class LpButtonComponent {
   @Input() text: string = '';
   @Input() icon: string = '';
+  @Input() type: string = '';
 }

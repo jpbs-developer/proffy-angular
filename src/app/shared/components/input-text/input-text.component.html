@@ -1,0 +1,9 @@
+<div class="input-wrapper">
+  <label [for]="label">{{ label }}</label>
+  <input
+    class="input-control"
+    type="text"
+    (keyup)="onTypping($event)"
+    [id]="label"
+  />
+</div>

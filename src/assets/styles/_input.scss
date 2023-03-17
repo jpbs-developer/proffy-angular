@@ -1,0 +1,32 @@
+.input-wrapper {
+  transition: all 2s ease-in;
+  @apply flex flex-col mt-6 relative;
+  label {
+    @apply mb-2 text-sm text-complement-text;
+  }
+  .input-control {
+    @apply rounded-lg border-ligh-dark border py-4 px-6 bg-bg-input text-text-base outline-none;
+  }
+}
+
+.input-wrapper:focus-within::after {
+  content: "";
+  width: calc(100% - 2rem);
+  height: 2px;
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 0;
+  animation: slide 0.5s ease-in-out;
+  border-radius: 3px;
+  @apply bg-primary;
+}
+
+@keyframes slide {
+  from {
+    width: 0%;
+  }
+  to {
+    width: calc(100% - 2rem);
+  }
+}

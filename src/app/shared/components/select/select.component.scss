@@ -1,0 +1,34 @@
+.input-wrapper-container {
+  background-color: #f8f8fc;
+  @apply rounded-lg border-ligh-dark border  z-10;
+}
+.select-input-control {
+  @apply flex items-center border-b justify-between cursor-pointer py-4 px-6 text-text-base;
+}
+.select {
+  animation: slide 1s ease-in-out;
+  @apply bg-bg-input hidden  w-full overflow-y-auto max-h-52;
+}
+
+.select.active {
+  animation: slide 1s ease-in-out;
+  @apply block;
+}
+.select .item {
+  @apply bg-bg-input py-4 px-6 relative border;
+}
+
+.select .item.active::after {
+  content: "";
+  width: 2px;
+  @apply h-full bg-primary absolute left-0 top-0;
+}
+
+@keyframes slide {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}

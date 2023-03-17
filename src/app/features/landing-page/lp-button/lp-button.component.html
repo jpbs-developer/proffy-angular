@@ -1,4 +1,9 @@
-<button>
+<button
+  [ngClass]="{
+    purple: type == 'purple',
+    green: type == 'green'
+  }"
+>
   <img [src]="icon" alt="" />
   <span>{{ text }}</span>
 </button>
