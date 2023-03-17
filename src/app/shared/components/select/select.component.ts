@@ -16,17 +16,25 @@ import {
   styleUrls: ['./select.component.scss'],
 })
 export class SelectComponent {
+
+
+  items = [
+    'Item 1',
+    'Item 2',
+    'Item 3',
+    'Item 4',
+    'Item 5',
+    'Item 6',
+    'Item 7',
+    'Item 8',
+    'Item 9',
+  ];
+  value: string = 'Selecione qual você quer ensinar';
   drop: boolean = false;
   @ViewChild('select', { static: true }) select!: ElementRef<HTMLDivElement>;
-  @ViewChild('alter', { static: true }) alt!: ElementRef<HTMLElement>;
   @Input() label = '';
 
-  constructor(private renderer: Renderer2) {}
-
-  onTypping(event: Event) {
-    const value = (event.target as HTMLInputElement).value;
-    // this.writeValue(value);
-  }
+  constructor(private renderer: Renderer2, private elem: ElementRef) {}
 
   dropDown() {
     if (!this.drop) {
@@ -36,5 +44,11 @@ export class SelectComponent {
       this.drop = false;
       this.renderer.removeClass(this.select.nativeElement, 'active');
     }
+  }
+
+  selectedItem(item: string) {
+    this.value = item;
+    this.drop = true
+    this.dropDown()
   }
 }

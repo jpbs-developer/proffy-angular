@@ -2,16 +2,12 @@
   <label [for]="label">{{ label }}</label>
   <div class="input-wrapper-container">
     <div class="select-input-control" (click)="dropDown()">
-      <span>Selecione qual você quer ensinar</span>
-      <span class="material-symbols-outlined"> expand_more </span>
+      <span>{{ value }}</span>
+      <span class="material-symbols-outlined icon" [ngClass]="
+      { 'rotate': drop}"> expand_more </span>
     </div>
     <ul class="select" #select>
-      <li class="item active">Item 1</li>
-      <li class="item">Item 2</li>
-      <li class="item">Item 2</li>
-      <li class="item">Item 2</li>
-      <li class="item">Item 2</li>
-      <li class="item">Item 2</li>
+      <li class="item" *ngFor="let item of items" (click)="selectedItem(item)">{{ item }}</li>
     </ul>
   </div>
 </div>
